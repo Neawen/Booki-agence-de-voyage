@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Pour le titre de niveau h1 :
+J'enlève la marge extérieure en dessous.
+Je modifie la taille du texte. */
+h1 {
+    margin-bottom: 0rem;
+    font-size: 1.4rem;
+}
+
+/* Pour les titres de niveau h2 :
+Je modifie la taille du texte. */
+h2 {
+    font-size: 1.4rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    color: var(--main-bg-color)
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Header :
+Je rends le conteneur flexible
+et je lui donne une direction en ligne.
+Je mets de l'espace entre les éléments.
+Je centre les éléments sur l'axe secondaire.
+Je donne une hauteur au conteneur*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.94rem;
+}
+
+/* Pour l'image dans le header :
+Je lui donne une largeur.
+Je lui donne une hauteur. */
+header img {
+    width: 3.76rem;
+    height: 1.2rem;
+}
+
+/* Pour la barre de navigation dans le header :
+Je lui donne une largeur.
+Je rends le conteneur flex.
+J'aligne les éléments à la fin sur l'axe principal.
+Je rajoute une marge en bas. */
+header nav {
+    width: 21.5rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1.8rem;
+}
+
+/* Pour le lien hébergements dans la barre de navigation :
+J'ajoute une marge à droite. */
+.margin-right {
+    margin-right: 4.25rem;
+}
+
+/* Pour les liens dans la barre de navigation, au survol :
+Je modifie la couleur du texte.
+J'ajoute une bordure au dessus de la même couleur.
+Je mets de l'espace entre la bordure et le lien.
+J'ajoute de l'espace en dessous du texte pour réctifier le décalage par rapport au reste du header. */
+nav a:hover {
+    color: var(--main-color);
+    border-top: 0.13rem var(--main-color) solid;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+/* Pour les liens dans la barre de navigation :
+Je rajoute une bordure invisible.
+J'ajoute la même marge en haut
+et en bas pour pas qu'il y est de décalage avec l'autre lien au survol */
+nav a {
+    border-top: 0.13rem white solid;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* Pour le paragraphe descriptif du h1 :
+Je modifie la marge extérieure du dessus. */
+.margin_top {
+    margin-top: 0.5rem;
+}
+
+/* Section recherche :
+Je donne une largeur à la totalité du formulaire,
+ainsi qu'une hauteur.
+Je rends ce conteneur flexible pour que les éléments se collent entre eux.
+J'ajoute une marge extérieur en dessous. */
+form {
+    width: 24rem;
+    height: 3rem;
+    display: flex;
+    margin-bottom: 2.2rem;
+    margin-top: 2.2rem;
+}
+
+/* Conteneur logo de localisation :
+Je lui donne une largeur.
+Je lui applique une couleur de fond.
+J'arrondie seulement le côté en haut à gauche et en bas à gauche.
+Je rends le conteneur flexible.
+Je centre son élément intérieur dans l'axe principal,
+ainsi que sur l'axe secondaire. */
+label {
+    width: 3.1rem;
+    background-color: var(--main-bg-color);
+    border-radius: 0.9rem 0 0 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pour l'image dans dans le label :
+Je lui donne une largeur
+et une hauteur. */
+label img {
+    width: 0.9rem;
+    height: 1.1rem;
+}
+
+/* Pour l'input de type texte :
+Je lui donne une largeur.
+Je change la bordure du haut pour lui donner une taille, une couleur et un style.
+Pareil pour la bordure du bas.
+Je supprime la bordure de gauche
+et celle de droite.
+Je change le texte pour qu'il soit en gras.
+Je change la taille du texte
+et je le centre.
+J'enlève la bordure bleue qui s'affiche quand on clique à l'intérieur. */
+input[type="text"] {
+    width: 12.1rem;
+    border-top: 0.06px var(--main-bg-color) solid;
+    border-bottom: 0.06px var(--main-bg-color) solid;
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+}
+
+/* Pour l'input "Rechercher" :
+Je lui donne une largeur.
+Je change la couleur de fond.
+Je change la couleur du texte.
+J'arrondie l'angle du haut à droite et en bas à droite.
+Je supprime toutes les bordures.
+Je change la taille du texte.
+Je change le texte pour qu'il soit en gras. */
+input[value="Rechercher"] {
+    width: 8.25rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 0 0.9rem 0.9rem 0;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Pour l'input de recherche qui doit contenir le logo loupe pour la version mobile:
+Je rends l'élément invisible.
+Je lui donne une largeur.
+Je change la couleur de fond.
+J'arrondie l'angle du haut à droite et en bas à droite.
+Je supprime toutes les bordures.
+J'ajoute le logo.
+et je lui donne une taille.
+J'empêche le logo de se répéter
+et je le centre sur les deux axes. */
+.logo_loupe {
+    display: none;
+    width: 8.25rem;
+    background-color: var(--main-color);
+    border-radius: 0 0.9rem 0.9rem 0;
+    border: none;
+    background-image: url("../images/petits_logos/loupe.png");
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Div conteneur de "Filtres" + boutons filtrants */
+.filtres {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.1rem;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+/* Gros conteneur pour les deux conteneurs de boutons filtrants */
+.conteneur_bouton {
+    display: flex;
+    gap: 0.9rem;
+}
+
+/* Conteneur de deux boutons filtrants */
+.conteneur_deux_boutons {
+    display: flex;
+    gap: 0.9rem;
+}
+
+/* Boutons filtrants dans la div "filtres" */
+.filtres button {
+    height: 3.1rem;
+    border-radius: 1.5rem;
+    padding: 0 1.2rem 0 1.2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    border: 0.15rem #D9D9D9 solid;
+    display: flex;
+    align-items: center;
+}
+
+/* Images dans la dans la div "filtres" */
+.filtres img {
+    margin-right: 0.6rem;
+}
+
+/* Pour les boutons filtrants au survol :
+Je change la couleur de fond. */
+.bouton:hover {
+    background-color: var(--filter-bg-color);
+}
+
+/* Pour la partie informations sur la ville choisie :
+Je rends le conteneur flexible.
+Je centre les éléments sur l'axe secondaire.
+J'ajoute une marge extérieure sur le dessus
+et en dessous. */
+.info_ville {
+    display: flex;
+    align-items: center;
+    margin-top: 2.1rem;
+    margin-bottom: 2.1rem;
+}
+
+/* Pour le logo dans la partie informations de la ville :
+Je modifie sa largeur
+et sa hauteur.
+J'ajoute une marge extérieur sur la droite. */
+.info_ville img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.6rem;
+}
+
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/****** Hebergements ***********/
+.hebergements {
+    width: 65%;
+}
+
+/* Pour le titre de niveau h2 dans la partie hébergement :
+Je supprime la marge du haut.
+Je modifie la marge extérieure du dessous. */
+.hebergements h2 {
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+}
+
+/* Pour les images dans le gros conteneur d'hébergements :
+Je modifie la taille.
+Je veux que la largeur soit maximale.
+J'arrondis seulement les angles du dessus.
+J'ajoute une marge extérieure en dessous.*/
+.conteneur_hebergement_ville img {
+    height: 7.8rem;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 0.2rem;
+}
+
+/* Pour le contenu des cards dans la partie hébergements :
+J'ajoute une marge extérieure à gauche. */
+.hebergements .card-content {
+    margin-left: 0.9rem;
+}
+
+/* Pour la notation dans la partie hébergements :
+J'ajoute une marge extérieure en dessous. */
+.hebergements .card-rating {
+    margin-bottom: 0.3rem;
+}
+
+/* Pour le titre
+et le paragraphe dans la partie hébergements :
+Je supprime les marges extérieures au dessus
+et je modifie la marge extérieure du dessous. */
+.hebergements .card-title,
+.hebergements .card-subtitle {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Pour chaque lien contenant un hébergement dans les conteneurs de trois hôtels :
+Je modifie la largeur. */
+.conteneur_trois_hebergements a {
+    width: 33%;
+}
+
+/* Pour le conteneur de 3 hôtels dans le gros conteneur d'hébergements :
+Je rends le conteneur flexible.
+J'ajoute une marge en dessous.
+J'ajoute une marge entre les éléments. */
+.conteneur_hebergement_ville .conteneur_trois_hebergements {
+    display: flex;
+    margin-bottom: 1.8rem;
+    gap: 1.9rem;
+}
+
+/* Pour les paragraphes des cards dans les conteneurs de 3 hôtels 
+et ceux qui se trouvent dans la section "populaires" : 
+Je modifie la taille des textes. */
+.conteneur_trois_hebergements .card-subtitle,
+.populaires .card-subtitle {
+    font-size: 0.9rem;
+}
+
+/* Pour le lien "Afficher plus" dans la partie hébergements :
+Je mets le texte en gras
+et je modifie sa taille. */
+.afficher_plus {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/****** Populaires ***********/
+.populaires {
+    width: 32%;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* Activités à Marseille */
+/* Pour le conteneur de 4 cards :
+Je rends le conteneur flexible.
+J'espace les éléments entre eux. */
+.activites {
+    display: flex;
+    gap: 1.8rem;
+}
+
+/* Pour les images du conteneur d'activités :
+Je donne une hauteur
+et je demande à ce qu'elles prennent toute la largeur.
+J'arrondie seulement les angles du haut. */
+.activites img {
+    height: 23.8rem;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Pour les cards dans le conteneur d'activités :
+Je supprime les marges à l'intérieur.
+Je leur donne une hauteur. */
+.activites .card {
+    padding: 0;
+    height: 27.4rem;
+}
+
+/* Pour les liens qui contiennent les cards dans le conteneur d'activités : 
+Je demande à ce qu'elles prennent 25% de largeur. */
+.activites a {
+    width: 25%;
+}
+
+/* Pour la section activités :
+J'ajoute les marges à l'intérieur. */
+.padding_activites {
+    padding: 2.1rem 1.8rem 2.1rem 1.8rem;
+}
+
+/* Pour le titre de niveau h2 :
+J'ajoute une marge extérieure en dessous. */
+.padding_activites h2 {
+    margin-bottom: 1.8rem;
+}
+
+/* Pour les titres de niveau h3 dans le conteneur d'activités :
+J'ajoute une marge intérieure à gauche. */
+.activites h3 {
+    padding-left: 1.2rem;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* footer */
+/* Je rends le conteneur flexible.
+Je modifie la couleur de fond. 
+J'ajoute une marge extérieure au dessus. */
+footer {
+    display: flex;
+    background-color: var(--main-bg-color);
+    margin-top: 1.8rem;
+}
+
+/* Pour les balises articles dans le footer :
+Je rends les conteneurs flexibles
+et je les aligne en colonne.
+Je modifie la taille du conteneur.
+J'ajoute une marge à l'intérieur à gauche. */
+footer article {
+    display: flex;
+    flex-direction: column;
+    width: 27.9rem;
+    padding-left: 1.3rem;
+}
+
+/* Pour les liens dans le footer
+et les titres de niveau h2 dans le footer :
+J'ajoute une marge intérieure en dessous. */
+footer a,
+footer h2 {
+    margin-bottom: 0.9rem;
+}
+
+/* Pour les titres de niveau h2 dans le footer :
+Je modifie la taille du texte. */
+footer h2 {
+    font-size: 1.1rem;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+
+    /* ----------------------------------------------------------------- */
+    h1 {
+        margin-top: 1.8rem;
+    }
+
+    /* Conteneur pour les boutons de filtrage */
+    .filtres {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Paragraphe dans le conteneur "filtres" */
+    .filtres p {
+        margin: 0 0 0.3rem 0;
+    }
+
+    /* Conteneur informations sur la ville */
+    .info_ville {
+        margin: 2.1rem 0 2.1rem 0;
+    }
+
+    /* Paragraphe dans le conteneur d'informations sur la ville */
+    .info_ville p {
+        margin: 0;
+    }
+
+    /* ----------------------------------------------------------------- */
+    /* Cards dans la section d'hôtels populaires */
+    .populaires .card {
+        margin-top: 1.25rem;
+    }
+
+    /* ----------------------------------------------------------------- */
+    /* Images dans la div "activites" */
+    .activites img {
+        height: 12.5rem;
+    }
+
+    /* Cards dans la div "activites" */
+    .activites .card {
+        height: 16.9rem;
+    }
+
+    /* Contenu texte des cards dans la div "activites"*/
+    .activites .card-content {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    /* -------------------------------------------------------------------- */
+    footer {
+        gap: 1.9rem;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (min-width: 320px) and (max-width: 768px) {
+
+    /* Partie header */
+    /* Je range les éléments en colonne,
+    Je change sa hauteur. */
+    header {
+        flex-direction: column;
+        height: 7.1rem;
+    }
+
+    /* Pour la barre de navigation dans le header : 
+    Je centre le texte,
+    Je veux que les éléments prennent 100% de la place. */
+    header nav {
+        text-align: center;
+        width: 100%;
+        padding-bottom: 1.9rem;
+    }
+
+    /* Pour l'image dans le header : 
+    Je modifie la marge intérieure du haut et du bas. */
+    header img {
+        padding: 1.5rem 0 1.5rem 0;
+    }
+
+    /* Pour les liens dans la barre de navigation, au survol : 
+    J'enlève la bordure au dessus,
+    J'ajoute une bordure en dessous.
+    J'enlève la marge intérieure au dessus. */
+    nav a:hover {
+        border-top: none;
+        border-bottom: 0.13rem var(--main-color) solid;
+        padding-top: 0rem;
+    }
+
+    /* Pour les liens dans la barre de navigation : 
+    J'enlève la bordure du dessus,
+    j'ajoute une bordure invisible en dessous, 
+    j'enlève la marge intérieure du dessus, 
+    Je veux que les éléments prennent 50% de la place. */
+    nav a {
+        border-top: none;
+        border-bottom: 0.13rem white solid;
+        padding-top: 0rem;
+        width: 50%;
+    }
+
+    /* Pour le lien "hébergements"  dans la barre de navigation : 
+    J'enlève la marge extérieure à droite. */
+    .margin-right {
+        margin-right: 0rem;
+    }
+
+    /* --------------------------------------------------------------- */
+    /* Pour le formulaire de recherche : 
+    Je veux qu'il prenne 100% de la place. 
+    Je centre le contenu pour gérer la modification manuelle de la taille d'écran. */
+    form {
+        width: 100%;
+    }
+
+    /* Pour l'input avec la valeur "Rechercher" : 
+    Je rends l'élément invisible. */
+    input[value="Rechercher"] {
+        display: none;
+    }
+
+    /* Pour l'input avec la classe "logo_loupe" : 
+    Je rends l'élément visible,
+    je modifie sa largeur
+    et sa hauteur,
+    J'arrondis tous les angles,
+    je modifie la taille du logo,
+    j'ajoute une ombre autour du bouton. */
+    .logo_loupe {
+        display: block;
+        width: 15%;
+        height: 3rem;
+        border-radius: 0.9rem 0.9rem 0.9rem 0.9rem;
+        background-size: 1rem 1rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Pour l'input de texte dans le formulaire : 
+    Je veux qu'il prenne 70% de la place. */
+    form input[type="text"] {
+        width: 70%;
+    }
+
+    label {
+        width: 15%;
+    }
+
+    /* Pour la div qui contient la classe "main-container" juste en dessous de la balise body : 
+    J'enlève la marge intérieure. */
+    .main-container {
+        padding: 0;
+    }
+
+    /* Pour les balises sections : 
+    J'ajoute une marge intérieure sur les côtés. */
+    section {
+        padding: 0 1.25rem 0 1.25rem;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /* Pour la partie filtres : 
+    Je donne une direction en colonne,
+    j'aligne les éléments sur l'axe secondaire au début. */
+    .filtres {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Pour le paragraphe dans la partie "filtres" : 
+    J'enlève la marge extérieure au dessus. */
+    .filtres p {
+        margin-top: 0;
+    }
+
+    /* Conteneur de deux autres conteneurs qui contiennent deux boutons filtrants */
+    .conteneur_bouton {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Conteneur de deux boutons filtrants */
+    .conteneur_deux_boutons {
+        gap: 0.6rem;
+    }
+
+    .conteneur_deux_boutons button {
+        width: 50%;
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    /* Pour la partie "informations" sur la ville en dessous du filtre 
+    et pour le p qu'elle contient : 
+    J'enlève les marges extérieures en dessous. */
+    .info_ville,
+    .info_ville p {
+        margin-bottom: 0;
+    }
+
+    /* Pour le paragraphe dans la partie "informations" sur la ville : 
+    J'enlève la marge extérieure au dessus.*/
+    .info_ville p {
+        margin-top: 0;
+    }
+
+    /* -------------------------------------------------------------------- */
+    /* Pour le conteneur qui contient les parties "hébergements" et "populaires" : 
+    Je veux que les éléments soient inversés en colonne. */
+    .hebergements-and-populaires {
+        flex-direction: column-reverse;
+    }
+
+    /* Pour la div "populaires-cards" qui contient toutes les cards : 
+    Je veux qu'elles soient en colonne. */
+    .populaires-cards {
+        flex-direction: column;
+    }
+
+    /* Pour les liens qui contiennent les cards dans la partie "populaires-cards" : 
+    Je veux qu'ils prennent 100% dans la place.  */
+    .populaires-cards a {
+        width: 100%;
+    }
+
+    /* Pour les sections dans la div "hebergements-and-populaires" : 
+    J'enlève tous les angles arrondis. 
+    Je modifie la marge intérieure de gauche
+    et celle de droite. */
+    .hebergements-and-populaires section {
+        border-radius: 0;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    /* Pour la section "populaires" : 
+    Je modifie la marge au dessus. */
+    .populaires {
+        margin-top: 2.1rem;
+    }
+
+    /* Pour les cards dans la section "populaires" : 
+    Je modifie la marge extérieure au dessus. */
+    .populaires .card {
+        margin-top: 0.9rem;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* Pour les conteneurs de trois hôtels dans la partie "hébergements" : 
+    Je veux que les éléments soient alignés en colonne. 
+    Je modifie l'espace entre les éléments
+    et je modifie la marge extérieure en dessous. */
+    .hebergements .conteneur_trois_hebergements {
+        flex-direction: column;
+        gap: 0.9rem;
+        margin-bottom: 0.9rem;
+    }
+
+    /* Pour les liens contenant les cards dans les conteneurs de trois hôtels : 
+    Je veux qu'ils prennent 100% de la place. */
+    .conteneur_trois_hebergements a {
+        width: 100%;
+    }
+
+    /* Pour la section qui contient la classe "hebergements" : 
+    Je change la couleur de fond. */
+    section[class="hebergements"] {
+        background-color: white;
+    }
+
+    /* Pour le titre de niveau h2 dans la section hébergements : 
+    Je modifie la marge extérieure en dessous. */
+    .hebergements h2 {
+        margin-bottom: 0.9rem;
+    }
+
+    /* ------------------------------------------------------------------------ */
+    /* Section d'activités dans la ville */
+    /* Pour le conteneur d'activités dans la section "padding_activites" : 
+    Je veux que les cartes soient alignées en colonne. 
+    Je modifie l'espace entre les éléments. */
+    .padding_activites .activites {
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    /* Pour les liens dans la div "activites" : 
+    Je veux qu'elles prennent 100% de la largeur. */
+    .activites a {
+        width: 100%;
+    }
+
+    /* Pour les images dans le conteneur d'activités : 
+    Je modifie la hauteur. */
+    .activites img {
+        height: 8.8rem;
+    }
+
+    /* Pour les cards dans le conteneur d'activités : 
+    Je modifie la hauteur. */
+    .activites .card {
+        height: 12.5rem;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* Pour le footer : 
+    J'aligne les éléments en colonne. 
+    Je modifie l'espace entre les éléments. 
+    Je modifie les marges intérieures au dessus et en dessous. */
+    footer {
+        flex-direction: column;
+        gap: 1.9rem;
+        padding: 1.3rem 0 1.3rem 0;
+    }
+}
