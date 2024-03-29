@@ -494,6 +494,7 @@ J'ajoute les marges à l'intérieur. */
 /* Pour le titre de niveau h2 :
 J'ajoute une marge extérieure en dessous. */
 .padding_activites h2 {
+    margin-top: 1.8;
     margin-bottom: 1.8rem;
 }
 
