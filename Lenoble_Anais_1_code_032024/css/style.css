@@ -888,6 +888,10 @@ footer h2 {
         height: 12.5rem;
     }
 
+    .activites .card-content {
+        height: 3rem;
+    }
+
     /* ------------------------------------------------------------------------------ */
     /* Pour le footer : 
     J'aligne les éléments en colonne. 
